@@ -21,87 +21,16 @@ body {
   font-family: 'Poppins';
 }
 
-.apexcharts-legend {
-  display: flex;
-  overflow: auto;
-  padding: 0 10px;
+.box-container{
+  background-color: #ffffff;
+  padding: 15px;
+  overflow: hidden;
+  border-radius: 4px;
 }
-
-.apexcharts-legend.apx-legend-position-bottom,
-.apexcharts-legend.apx-legend-position-top {
-  flex-wrap: wrap
+.graph-header > h3{
+  font-size: 25px;
+  color: #405189;
 }
-
-.apexcharts-legend.apx-legend-position-right,
-.apexcharts-legend.apx-legend-position-left {
-  flex-direction: column;
-  bottom: 0;
-}
-
-.apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left,
-.apexcharts-legend.apx-legend-position-top.apexcharts-align-left,
-.apexcharts-legend.apx-legend-position-right,
-.apexcharts-legend.apx-legend-position-left {
-  justify-content: flex-start;
-}
-
-.apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center,
-.apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
-  justify-content: center;
-}
-
-.apexcharts-legend.apx-legend-position-bottom.apexcharts-align-right,
-.apexcharts-legend.apx-legend-position-top.apexcharts-align-right {
-  justify-content: flex-end;
-}
-
-.apexcharts-legend-series {
-  cursor: pointer;
-  line-height: normal;
-}
-
-.apexcharts-legend.apx-legend-position-bottom .apexcharts-legend-series,
-.apexcharts-legend.apx-legend-position-top .apexcharts-legend-series {
-  display: flex;
-  align-items: center;
-}
-
-.apexcharts-legend-text {
-  position: relative;
-  font-size: 14px;
-}
-
-.apexcharts-legend-text *,
-.apexcharts-legend-marker * {
-  pointer-events: none;
-}
-
-.apexcharts-legend-marker {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  margin-right: 3px;
-  border-style: solid;
-}
-
-.apexcharts-legend.apexcharts-align-right .apexcharts-legend-series,
-.apexcharts-legend.apexcharts-align-left .apexcharts-legend-series {
-  display: inline-block;
-}
-
-.apexcharts-legend-series.apexcharts-no-click {
-  cursor: auto;
-}
-
-.apexcharts-legend .apexcharts-hidden-zero-series,
-.apexcharts-legend .apexcharts-hidden-null-series {
-  display: none !important;
-}
-
-.apexcharts-inactive-legend {
-  opacity: 0.45;
-}
-
 #page-topbar {
   /* z-index: calc(1002 + 1); */
   position: fixed;
@@ -109,7 +38,7 @@ body {
   right: 0;
   left: 0;
   z-index: 1002;
-  background-color: var(--vz-header-bg);
+  background-color: #ffffff;
   -webkit-transition: all .1s ease-out;
   transition: all .1s ease-out;
 }
@@ -348,13 +277,14 @@ font-size: .92rem;
 .main-content {
   -webkit-transition: all .1s ease-out;
   transition: all .1s ease-out;
+  background: #f3f3f9;
 }
 .page-content {
   padding: calc(70px + 1.5rem) calc(1.5rem / 2) 60px calc(1.5rem / 2);
 }
 .page-title-box {
   padding: 10px 1.5rem;
-  background-color: var(--vz-card-bg);
+  background-color: #ffffff;
   -webkit-box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
   box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
   border-bottom: 1px solid none;
