@@ -206,7 +206,7 @@ function AdminContainer() {
 
               <div className="dropdown topbar-head-dropdown ms-1 header-item">
                 <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <BackupOutlinedIcon color='primary' />
+                  <BackupOutlinedIcon sx={{color:'#686868'}} />
                 </button>
                 {/* <div className="dropdown-menu dropdown-menu-lg p-0 dropdown-menu-end">
                     <div className="p-3 border-top-0 border-start-0 border-end-0 border-dashed border">
@@ -269,7 +269,7 @@ function AdminContainer() {
 
               <div className="dropdown topbar-head-dropdown ms-1 header-item">
                 <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-cart-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <NotificationsNoneOutlinedIcon />
+                  <NotificationsNoneOutlinedIcon sx={{color:'#686868'}} />
                   <span className="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">7<span className="visually-hidden">unread messages</span></span>
                 </button>
                 {/* <div className="dropdown-menu dropdown-menu-xl dropdown-menu-end p-0" aria-labelledby="page-header-cart-dropdown">

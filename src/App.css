@@ -21,6 +21,9 @@ html {
 body {
   font-family: 'Poppins';
 }
+button {
+  outline: none;
+}
 .text-link{
   color: var(--primary);
 }
