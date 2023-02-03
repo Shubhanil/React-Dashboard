@@ -1,4 +1,5 @@
 :root {
+  --primary: #405189;
   --menu-bg-dark: #405189;
   --gray700: #495057;
   --topbarSearchBg: #f3f3f9;
@@ -20,7 +21,56 @@ html {
 body {
   font-family: 'Poppins';
 }
+.text-link{
+  color: var(--primary);
+}
+.text-link:hover{
+  color: var(--gray700);
+}
+.shadowOne{
+  color: #3577f1;
+  padding: 8px;
+  background: #e5e5e5;
+  width: 18rem;
+  margin: 13px;
+  border-radius: 63%;
+}
+.btn-auth{
+  color: #f3f3f3;
+  background: #405189;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+}
+.btn-auth:hover{
+  color: #ffffff;
+  background: #505a7a;
+}
+/* ----------------Font Size ------------------*/
+.fs-10 {
+  font-size: 10px !important;
+}
 
+.fs-12 {
+  font-size: 12px !important;
+}
+.fs-14{
+  font-size: 14px;
+}
+.fs-16{
+  font-size: 16px;
+}
+.fs-18{
+  font-size: 18px;
+}
+
+.fs-22 {
+  font-size: 22px !important;
+}
+.fw-medium {
+  font-weight: 500;
+}
 .box-container{
   background-color: #ffffff;
   padding: 15px;
@@ -202,21 +252,6 @@ button {
   vertical-align: middle;
 }
 
-.fs-22 {
-  font-size: 22px !important;
-}
-
-.fs-10 {
-  font-size: 10px !important;
-}
-
-.fs-12 {
-  font-size: 12px !important;
-}
-
-.fw-medium {
-  font-weight: 500;
-}
 
 .bx {
   font-family: boxicons !important;

@@ -63,6 +63,7 @@ const dataMap = [
   ["Canada", 500],
   ["France", 600],
   ["RU", 700],
+  ["India", 800],
 ];
 
 class Dashboard extends Component {

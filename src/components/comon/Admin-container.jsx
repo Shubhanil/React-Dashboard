@@ -1,51 +1,59 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import SideMenu from '../SideMenu';
+import BackupOutlinedIcon from '@mui/icons-material/BackupOutlined';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 
 function AdminContainer() {
-    return (
-        <div id="layout-wrapper">
-            {/* <!-- ========== Header ========== --> */}
-            <header id="page-topbar">
-                <div className="layout-width">
-                    <div className="navbar-header">
-                        <div className="d-flex">
-                            {/* Logo */}
-                            <div className="navbar-brand-box horizontal-logo">
-                                <Link to="#" className="logo logo-dark">
-                                    <span className="logo-sm">
-                                        <img src="assets/images/logo-sm.png" alt="" height="22" />
-                                    </span>
-                                    <span className="logo-lg">
-                                        <img src="assets/images/logo-dark.png" alt="" height="17" />
-                                    </span>
-                                </Link>
+  const logOut = () => {
+    if (window.confirm("Are you want to logout?")) {
+      localStorage.clear("token");
+      window.location.reload();
+  }
+  }
+  return (
+    <div id="layout-wrapper">
+      {/* <!-- ========== Header ========== --> */}
+      <header id="page-topbar">
+        <div className="layout-width">
+          <div className="navbar-header">
+            <div className="d-flex">
+              {/* Logo */}
+              <div className="navbar-brand-box horizontal-logo">
+                <Link to="#" className="logo logo-dark">
+                  <span className="logo-sm">
+                    <img src="assets/images/logo-sm.png" alt="" height="22" />
+                  </span>
+                  <span className="logo-lg">
+                    <img src="assets/images/logo-dark.png" alt="" height="17" />
+                  </span>
+                </Link>
 
-                                <Link to="#" className="logo logo-light">
-                                    <span className="logo-sm">
-                                        <img src="assets/images/logo-sm.png" alt="" height="22" />
-                                    </span>
-                                    <span className="logo-lg">
-                                        <img src="assets/images/logo-light.png" alt="" height="17" />
-                                    </span>
-                                </Link>
-                            </div>
+                <Link to="#" className="logo logo-light">
+                  <span className="logo-sm">
+                    <img src="assets/images/logo-sm.png" alt="" height="22" />
+                  </span>
+                  <span className="logo-lg">
+                    <img src="assets/images/logo-light.png" alt="" height="17" />
+                  </span>
+                </Link>
+              </div>
 
-                            <button type="button" className="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
-                                <span className="hamburger-icon open">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </span>
-                            </button>
+              <button type="button" className="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
+                <span className="hamburger-icon open">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
 
-                            <form className="app-search d-none d-md-block">
-                                <div className="position-relative">
-                                    <input type="text" className="form-control" placeholder="Search..." autoComplete="off" id="search-options" />
-                                    <span className="mdi mdi-magnify search-widget-icon"></span>
-                                    <span className="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
-                                </div>
-                                {/* <div className="dropdown-menu dropdown-menu-lg" id="search-dropdown">
+              <form className="app-search d-none d-md-block">
+                <div className="position-relative">
+                  <input type="text" className="form-control" placeholder="Search..." autoComplete="off" id="search-options" />
+                  <span className="mdi mdi-magnify search-widget-icon"></span>
+                  <span className="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                </div>
+                {/* <div className="dropdown-menu dropdown-menu-lg" id="search-dropdown">
                     <div data-simplebar="init" style={{ maxHeight: '320px' }}>
                       <div className="simplebar-wrapper" style={{ margin: '0px' }}>
                         <div className="simplebar-height-auto-observer-wrapper">
@@ -131,32 +139,36 @@ function AdminContainer() {
                       <Link to="pages-search-results.html" className="btn btn-primary btn-sm">View All Results <i className="ri-arrow-right-line ms-1"></i></Link>
                     </div>
                   </div> */}
-                            </form>
-                        </div>
+              </form>
+            </div>
 
-                        <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center">
 
-                            <div className="dropdown d-md-none topbar-head-dropdown header-item">
-                                <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i className="bx bx-search fs-22"></i>
-                                </button>
-                                <div className="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
-                                    <form className="p-3">
-                                        <div className="form-group m-0">
-                                            <div className="input-group">
-                                                <input type="text" className="form-control" placeholder="Search ..." aria-label="Recipient's username" />
-                                                <button className="btn btn-primary" type="submit"><i className="mdi mdi-magnify"></i></button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+              <div className="dropdown d-md-none topbar-head-dropdown header-item">
+                <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i className="bx bx-search fs-22"></i>
+                </button>
+                <div className="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+                  <form className="p-3">
+                    <div className="form-group m-0">
+                      <div className="input-group">
+                        <input type="text" className="form-control" placeholder="Search ..." aria-label="Recipient's username" />
+                        <button className="btn btn-primary" type="submit"><i className="mdi mdi-magnify"></i></button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
 
-                            <div className="dropdown ms-1 topbar-head-dropdown header-item">
-                                <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language" height="20" className="rounded" />
-                                </button>
-                                {/* <div className="dropdown-menu dropdown-menu-end">
+              <div className="dropdown ms-1 topbar-head-dropdown header-item">
+                <button type="button"
+                  className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
+                  <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language" height="20" className="rounded" />
+                </button>
+                {/* <div className="dropdown-menu dropdown-menu-end">
 
                     <Link to="#" className="dropdown-item notify-item language py-2" data-lang="en" title="English">
                       <img src="assets/images/flags/us.svg" alt="user" className="me-2 rounded" height="18" />
@@ -190,13 +202,13 @@ function AdminContainer() {
                       <span className="align-middle">français</span>
                     </Link>
                   </div> */}
-                            </div>
+              </div>
 
-                            <div className="dropdown topbar-head-dropdown ms-1 header-item">
-                                <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language" height="20" className="rounded" />
-                                </button>
-                                {/* <div className="dropdown-menu dropdown-menu-lg p-0 dropdown-menu-end">
+              <div className="dropdown topbar-head-dropdown ms-1 header-item">
+                <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <BackupOutlinedIcon color='primary' />
+                </button>
+                {/* <div className="dropdown-menu dropdown-menu-lg p-0 dropdown-menu-end">
                     <div className="p-3 border-top-0 border-start-0 border-end-0 border-dashed border">
                       <div className="row align-items-center">
                         <div className="col">
@@ -253,14 +265,14 @@ function AdminContainer() {
                       </div>
                     </div>
                   </div> */}
-                            </div>
+              </div>
 
-                            <div className="dropdown topbar-head-dropdown ms-1 header-item">
-                                <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-cart-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language" height="20" className="rounded" />
-                                    <span className="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-info">7<span className="visually-hidden">unread messages</span></span>
-                                </button>
-                                {/* <div className="dropdown-menu dropdown-menu-xl dropdown-menu-end p-0" aria-labelledby="page-header-cart-dropdown">
+              <div className="dropdown topbar-head-dropdown ms-1 header-item">
+                <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-cart-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <NotificationsNoneOutlinedIcon />
+                  <span className="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">7<span className="visually-hidden">unread messages</span></span>
+                </button>
+                {/* <div className="dropdown-menu dropdown-menu-xl dropdown-menu-end p-0" aria-labelledby="page-header-cart-dropdown">
                     <div className="p-3 border-top-0 border-start-0 border-end-0 border-dashed border">
                       <div className="row align-items-center">
                         <div className="col">
@@ -413,20 +425,26 @@ function AdminContainer() {
                       </Link>
                     </div>
                   </div> */}
-                            </div>
+              </div>
 
 
-                            <div className="dropdown ms-sm-3 header-item topbar-user">
-                                <button type="button" className="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span className="d-flex align-items-center">
-                                        <img className="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar" />
-                                        <span className="text-start ms-xl-2">
-                                            <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
-                                            <span className="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Founder</span>
-                                        </span>
-                                    </span>
-                                </button>
-                                {/* <div className="dropdown-menu dropdown-menu-end">
+              <div className="dropdown ms-sm-3 header-item topbar-user">
+                <button type="button"
+                  onClick={logOut} 
+                  className="btn" 
+                  id="page-header-user-dropdown" 
+                  data-bs-toggle="dropdown" 
+                  aria-haspopup="true" 
+                  aria-expanded="false">
+                  <span className="d-flex align-items-center">
+                    <img className="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar" />
+                    <span className="text-start ms-xl-2">
+                      <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
+                      <span className="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Founder</span>
+                    </span>
+                  </span>
+                </button>
+                {/* <div className="dropdown-menu dropdown-menu-end">
                     <h6 className="dropdown-header">Welcome Anna!</h6>
                     <Link className="dropdown-item" to="pages-profile.html"><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Profile</span></Link>
                     <Link className="dropdown-item" to="apps-chat.html"><i className="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Messages</span></Link>
@@ -438,38 +456,38 @@ function AdminContainer() {
                     <Link className="dropdown-item" to="auth-lockscreen-basic.html"><i className="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Lock screen</span></Link>
                     <Link className="dropdown-item" to="auth-logout-basic.html"><i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span className="align-middle" data-key="t-logout">Logout</span></Link>
                   </div> */}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            {/* <!-- ========== Side Menu ========== --> */}
-            <SideMenu />
-            {/* <!-- ========== Main Contant (Right) ========== --> */}
-            <div className="main-content">
-                <div className="page-content">
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 className="mb-sm-0">Dashboard</h4>
-                                    <div>
-                                        <ol className="breadcrumb m-0">
-                                            <li className="breadcrumb-item"><Link to="#">Dashboards</Link></li>
-                                            <li className="breadcrumb-item active">Dashboard</li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <Outlet />
-
-                    </div>
-                </div>
-
+              </div>
             </div>
+          </div>
         </div>
-    )
+      </header>
+      {/* <!-- ========== Side Menu ========== --> */}
+      <SideMenu />
+      {/* <!-- ========== Main Contant (Right) ========== --> */}
+      <div className="main-content">
+        <div className="page-content">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <div className="page-title-box d-sm-flex align-items-center justify-content-between">
+                  <h4 className="mb-sm-0">Dashboard</h4>
+                  <div>
+                    <ol className="breadcrumb m-0">
+                      <li className="breadcrumb-item"><Link to="#">Dashboards</Link></li>
+                      <li className="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Outlet />
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  )
 }
 
 export default AdminContainer;
